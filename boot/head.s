@@ -92,6 +92,10 @@ rp_sidt:
 	lidt idt_descr
 	ret
 
+
+
+
+
 /*
  *  setup_gdt
  *
