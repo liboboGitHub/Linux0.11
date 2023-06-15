@@ -44,7 +44,6 @@ static inline _syscall0(int, sync)
 #include <linux/fs.h>
 
         static char printbuf[1024];
-
         extern int vsprintf();
         extern void init(void);
         extern void blk_dev_init(void);
@@ -114,6 +113,7 @@ void main(void)        /* This really IS void, no error here. */
  * enable them
  */
     ROOT_DEV = ORIG_ROOT_DEV;
+    // setup.s 程序获取并存储在内存 0x90000 处的设备信息
     drive_info = DRIVE_INFO;
     memory_end = (1 << 20) + (EXT_MEM_K << 10);
     memory_end &= 0xfffff000;
